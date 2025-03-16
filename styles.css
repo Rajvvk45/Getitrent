@@ -1,0 +1,46 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+    background-color: #f8f8f8;
+}
+
+.Rent {
+    height: 50px;
+    
+
+}
+
+#logo {
+
+    text-align: center;
+    padding: 100px;
+    
+
+}
+
+
+
+#petal1 { top: 400px; left: 100px; height: 600px; width: 135%; cursor: pointer;}
+#petal2 { top: 200px; right: 20px; }
+#petal3 { bottom: 10px; right: -40px; }
+#petal4 { bottom: -40px; left: 50px; }
+#petal5 { left: -40px; top: 10px; background-color: blue; } /* Info Page Petal */
+
+#videoModal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: white;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+
+#infoPage {
+    display: none;
+    padding: 20px;
+    background: white;
+    width: 60%;
+    margin: auto;
+}

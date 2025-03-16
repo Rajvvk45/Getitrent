@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Get It Rent</title>
+  <style>
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #fff;
+      margin: 0;
+      position: relative;
+    }
+    .logo-container {
+      position: relative;
+      width: 400px;
+    }
+    .logo {
+      width: 100%;
+    }
+    .petal {
+      position: absolute;
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+    .petal:hover {
+      transform: scale(1.1);
+    }
+    .petal1 { top: -10px; right: 10px; width: 60px; }
+    .petal2 { top: 35px; right: 0px; width: 60px; }
+    .petal3 { top: 65px; right: -10px; width: 60px; }
+    .petal4 { top: 80px; right: 20px; width: 40px; }
+    .petal5 { top: 100px; right: 50px; width: 25px; }
+    /* Modal styling */
+    #videoModal {
+        display: none;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        background: rgb(255, 255, 255);
+        padding: 20px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+    
+    #videoModal .modal-content {
+        position: relative;
+        max-width: 100%;
+        max-height: 100%;
+    }
+    #videoModal video {
+      width: auto;
+      height: auto;
+    }
+    #videoModal .close-btn {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      padding: 5px 10px;
+      background: #fff;
+      border: none;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <div class="logo-container">
+    <img src="Get It Rent Logo.png" alt="Get It Rent Logo" class="logo" />
+    <img src="Asset 1.png" alt="Petal 1" class="petal petal1" onclick="openVideo('Video.mp4')" />
+    <img src="Asset 2.png" alt="Petal 2" class="petal petal2" onclick="openVideo('video2.mp4')" />
+    <img src="Asset 3.png" alt="Petal 3" class="petal petal3" onclick="openVideo('video3.mp4')" />
+    <img src="Asset 4.png" alt="Petal 4" class="petal petal4" onclick="openVideo('video4.mp4')" />
+    <!-- This petal navigates to an info page -->
+    <img src="Asset 5.png" alt="Petal 5" class="petal petal5" onclick="openInfoPage()" />
+  </div>
+
+  <!-- Video Modal -->
+  <div id="videoModal">
+    <div class="modal-content">
+      <video id="videoPlayer" controls></video>
+      <button class="close-btn" onclick="closeVideo()">Close</button>
+    </div>
+  </div>
+
+  <script>
+    function openVideo(videoSrc) {
+      const videoPlayer = document.getElementById('videoPlayer');
+      const videoModal = document.getElementById('videoModal');
+      videoPlayer.src = "Video.mp4";
+      videoModal.style.display = 'flex'; // Use flex to center the modal
+    }
+
+    function closeVideo() {
+      const videoModal = document.getElementById('videoModal');
+      const videoPlayer = document.getElementById('videoPlayer');
+      videoModal.style.display = 'none';
+      videoPlayer.pause();
+      videoPlayer.src = ""; // Reset the video source
+    }
+
+    function openInfoPage() {
+      // Replace with your info page URL
+      window.location.href = "https://docs.google.com/forms/d/e/1FAIpQLSdS5piTaGTS5UEVEsFeFGsI5943vAtlkn1UPeH3x7JTBcxoRw/viewform?usp=header";
+    }
+  </script>
+</body>
+</html>
